@@ -1,0 +1,541 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: hsl(228, 33%, 97%);
+    color: hsl(211, 10%, 45%);
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .comment-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    gap: 15px; 
+    
+  }
+  
+  .vote-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: hsl(228, 33%, 97%);
+    margin-right: 20px;
+    color:  hsl(238, 40%, 52%);
+    font-weight: 500
+  }
+  
+  .vote-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* margin-bottom: 5px;
+    margin-top: 5px; */
+    margin: 5px 0;
+  }
+  
+  .comment-body {
+    width: 100%;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .username {
+    font-weight: bold;
+    color: hsl(212, 24%, 26%);
+  }
+  
+  .createdAt {
+    margin-left: 10px;
+    font-size: 0.875rem;
+    color: hsl(211, 10%, 45%);
+  }
+  
+  .actions {
+    display: flex;
+    gap: 15px;
+    /* margin-top: 10px; */
+    align-items: center;
+  }
+  .actions .reply-btn {
+    background: none;
+    border: none;
+    color: hsl(238, 40%, 52%);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .actions .edit-btn {
+    background: none;
+    border: none;
+    color: hsl(238, 40%, 52%);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .actions .delete-btn {
+    background: none;
+    border: none;
+    color: hsl(358, 79%, 66%);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .update-container {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 15px;
+  }
+  
+  .btn-save {
+    background-color: hsl(238, 40%, 52%);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .btn-save:hover {
+    background-color: hsl(238, 40%, 60%);
+  }
+  
+  .content {
+    margin-top: 10px;
+    color: hsl(211, 10%, 45%);
+  }
+  
+  .nested-replies {
+    padding-left: 40px;
+    border-left: 2px solid hsl(223, 19%, 93%);
+    margin-top: 20px;
+  }
+  
+  .add-comment-form {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .add-comment-form textarea {
+    flex-grow: 1;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 14px;
+    resize: none;
+  }
+  
+  .add-comment-form button {
+  
+    background-color: hsl(238, 40%, 52%);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .add-comment-form .btn-send:hover {
+    background-color: hsl(238, 40%, 60%);
+  }
+  
+  .inputfield-container{
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .form-control {
+    flex: 1; 
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding: 20px;
+    font-size: 14px;
+    resize: none;
+    width: 92%;
+  }
+  .form-control:hover{
+    border: 1px solid hsl(238, 40%, 52%);;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px 30px;
+    width: 270px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .modal-content h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .modal-content p {
+    font-size: 16px;
+    color: hsl(211, 10%, 45%);
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content:space-evenly;
+    margin-top: 20px;
+  }
+  
+  .modal-actions .cancel-btn,
+  .modal-actions .delete-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .modal-actions .cancel-btn {
+    background-color: hsl(211, 10%, 45%);
+    color: white;
+  }
+  
+  .modal-actions .delete-btn {
+    background-color: hsl(358, 79%, 66%);
+    color: white;
+  }
+  
+  .modal-actions .delete-btn:hover {
+    background-color: hsl(358, 79%, 75%);
+  }
+  
+  .comment-card.reply {
+    margin-left: 40px;
+    border-left: 2px solid hsl(223, 19%, 93%); 
+  }
+  
+   .reply-form {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  } 
+  
+  .reply-textarea {
+    width: 100%;
+    flex-grow: 1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    resize: none;
+  }
+  
+  .reply-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+  }
+  
+  .reply-btn-submit {
+    background-color: hsl(238, 40%, 52%);
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .reply-btn-submit:hover {
+    background-color: hsl(238, 40%, 60%);
+  }
+  
+  .you-label {
+    background-color: hsl(238, 40%, 52%);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  
+  /* Reply Form */
+  .reply-comment-form {
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 95%;
+  }
+  
+  .reply-comment-form textarea {
+    flex-grow: 1;
+    width: 85%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    resize: none;
+  }
+  
+  .reply-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .reply-comment-form .btn-send {
+    background-color: hsl(238, 40%, 52%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .reply-comment-form .btn-send:hover {
+    background-color: hsl(238, 40%, 60%);
+  }
+  
+  .replying-to {
+    color: hsl(238, 40%, 60%);
+    font-weight: bold;
+  }
+  
+  
+  /* Mobile Design Styles */
+  
+  .vote-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 8px 2px;
+    display: flex;
+  
+  }
+  
+  .vote-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .vote-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nested-replies {
+      margin-left: 0; 
+      border-left: none; 
+      padding-left: 0;
+    }
+  
+    .comment-card.reply {
+      margin-left: 0; 
+      border-left: none; 
+    }
+  
+    .actions {
+      flex-direction: row;
+      justify-content: flex-end;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  
+  
+    .avatar {
+      width: 30px;
+      height: 30px;
+      
+    }
+  
+    .add-comment-form {
+      flex-direction: column;
+    }
+  
+    .reply-textarea {
+      width: 95%;
+      padding: 10px;
+    }
+  
+    .btn-send {
+      width: 100%;
+    }
+      .form-control {
+        width: 85%;
+      }
+      .btn-send {
+        width: 70px;
+    
+      }
+    
+      .vote-section span {
+        font-size: 13px;
+        color: hsl(238, 40%, 52%);
+      }
+      .vote-section svg {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1px;
+      }
+      .comment-card {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+        height: 30vh;
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+    
+      .vote-section {
+        flex-direction: row;
+        position: absolute;
+        bottom: 3px;
+        left: 10px;
+        width: 50px;
+         display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 70px;
+        height: auto; 
+        gap: 5px;
+      }
+      .container {
+        padding: 10px;
+        max-width: 100%;
+      }
+    
+      .reply-comment-form {
+        width: 88%;
+      }
+  
+  }
+  
+  .add-comment-container {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative; 
+    gap: 10px;
+  }
+  
+  
+  /* Textarea styling */
+  .inputfield-container {
+    flex-grow: 1;
+    position: relative;
+  }
+  
+  .inputfield-container button {
+    width: 80px;
+  }
+  
+  
+  .inputfield-container textarea {
+    width: 95%;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 14px;
+    resize: none;
+    min-height: 80px;
+  }
+  
+  .add-comment-container .btn-send {
+    background-color: hsl(238, 40%, 52%);
+    color: white;
+    border-radius: 7px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px; 
+    position: absolute; 
+    bottom: 10px;
+    right: 10px; 
+    width: 75px; 
+    height: 40px; 
+    align-self: flex-end;
+  }
+  
+  .add-comment-container .btn-send:hover {
+    background-color: hsl(238, 40%, 60%);
+  }
+  
+
+  
